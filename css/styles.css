@@ -1,0 +1,95 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Custom properties -- update these for your own design */
+
+:root {
+    --ff-primary: 'Barlow Semi Condensed', sans-serif;
+
+    --fw-reg: 500;
+    --fw-bold: 600;
+
+    --clr-moderate-violet: hsl(263, 55%, 52%);
+    --clr-very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --clr-very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --clr-white: hsl(0, 0%, 100%);
+
+    --clr-light-gray: hsl(0, 0%, 81%);
+    --clr-light-grayish-blue: hsl(210, 46%, 95%);
+
+
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+
+    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,.25),
+          0.125em 0.125em 0.25em rgba(0,0,0,.15);
+
+    --bs-light: 0.125em 0.125em 0.25em rgba(0,0,0,.15);
+}
+
+html {
+    /* Common technique to make converting to rem easy */
+    /* We want 10px --> 10 / 16 --> 62.5%*/
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.3rem;
+    background: var(--clr-light-grayish-blue);
+
+}
+
+.card-grid {
+    display: grid;
+    gap: 2rem;
+    margin: 2rem;
+    grid-template-columns: repeat(12, [col-start] 1fr);
+}
+
+.card {
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: var(--bs);
+    grid-column: 1 / span 12;
+}
+
+
+.testimonial-1 {
+    background: var(--clr-moderate-violet);
+}
+
+.testimonial-2 {
+    background: var(--clr-very-dark-grayish-blue);
+}
+
+.testimonial-3 {
+    background: var(--clr-white);
+}
+
+.testimonial-4 {
+    background: var(--clr-very-dark-blackish-blue);
+}
+
+.testimonial-5 {
+    background: var(--clr-white)
+}
+
+@media screen and (min-width: 600px) {
+    .card {
+        grid-column: span 6;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .card {
+        grid-column: span 3;
+    }
+}
+
